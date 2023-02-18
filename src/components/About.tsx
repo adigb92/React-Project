@@ -10,7 +10,6 @@ interface AboutProps {
 const About: FunctionComponent<AboutProps> = () => {
 
 
-
     return (
         <>
 

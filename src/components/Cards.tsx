@@ -1,11 +1,8 @@
 import { FunctionComponent, useEffect, useState } from "react";
 import { getCards } from "../services/cardsService";
-
 import AddCardModal from "./AddCardModal";
 import UpdateCardModal from "./UpdateCardModal";
 import DeleteCardModal from "./DeleteCardModal";
-import { addCardToMyCards } from "../services/cartsService";
-import { successMsg } from "../services/feedbacks";
 import Card from "../interfaces/Card";
 import Footer from "./Footer";
 import CardsComp from "./CardsComp";
@@ -42,10 +39,10 @@ const Cards: FunctionComponent<CardsProps> = () => {
   return (
     <>
 
-      <h5 className="text-center display-3 mb-3">ALL CARDS</h5>
+      <h5 className="text-center display-3 mt-2">ALL CARDS</h5>
       {isBusiness && (
         <div className="container text-center">
-          <button className="btn btn-success m-4 w-50" onClick={handleAddCard}>
+          <button className="btn btn-success m-2 w-50" onClick={handleAddCard}>
             Add New Card <i className="fa-solid fa-plus align-items-center"></i>
           </button>
         </div>

@@ -1,7 +1,6 @@
 import { FunctionComponent, useEffect, useState } from "react";
 import Card from "../interfaces/Card";
-
-import { deleteCard, getMyCards } from "../services/cardsService";
+import { getMyCards } from "../services/cardsService";
 import Footer from "./Footer";
 import AddCardModal from "./AddCardModal";
 import UpdateCardModal from "./UpdateCardModal";
@@ -58,16 +57,6 @@ const Cart: FunctionComponent<CartProps> = () => {
                   <p className="text-success">
                     <i className="fas fa-phone mr-3 m-1"></i>
                     {card.phone}</p>
-                  <button
-                    className="btn btn-danger"
-                    onClick={() => {
-                      deleteCard(cardId);
-                      setCardId(card.id as number);
-                    }}
-                  >
-                    <i className="fa-solid fa-trash"></i>
-                    Delete
-                  </button>
                 </div>
               </div>
             ))}
@@ -94,7 +83,6 @@ const Cart: FunctionComponent<CartProps> = () => {
         cardId={cardId}
         refresh={refresh}
       />
-
       <Footer />
     </>
   );
