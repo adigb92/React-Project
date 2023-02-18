@@ -21,7 +21,7 @@ const About: FunctionComponent<AboutProps> = () => {
                             alt="" />
                     </div>
                     <div className="col-lg">
-                        <h1 className="display-3">Who Are We ?</h1>
+                        <h1 className="display-3 text-primary">Who Are We ?</h1>
                         <p className="mt-2">
                             <strong>
                                 Biz is a platform for creating and publishing business cards.
