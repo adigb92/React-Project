@@ -13,7 +13,10 @@ const Navbar: FunctionComponent<NavbarProps> = ({
   isLoggedIn,
   isBusiness,
 }) => {
+
   let navigate = useNavigate();
+
+
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">

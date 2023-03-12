@@ -6,10 +6,10 @@ import { checkUser } from "../services/usersService";
 import { Link, useNavigate } from "react-router-dom";
 import { errorMsg, successMsg } from "../services/feedbacks";
 
-
-
-
-interface LoginProps { setIsLoggedIn: Function; setIsBusiness: Function; }
+interface LoginProps {
+  setIsLoggedIn: Function;
+  setIsBusiness: Function;
+}
 
 const Login: FunctionComponent<LoginProps> = ({ setIsLoggedIn, setIsBusiness }) => {
   let navigate = useNavigate();
@@ -32,8 +32,12 @@ const Login: FunctionComponent<LoginProps> = ({ setIsLoggedIn, setIsBusiness }) 
                 userId: res.data[0].id,
               })
             );
+
+            sessionStorage.setItem("isBusiness", JSON.stringify(res.data[0].isBusiness));
+
             setIsLoggedIn(true);
             setIsBusiness(res.data[0].isBusiness);
+
             successMsg("Logged In");
           } else errorMsg("Wrong email or password");
         })
